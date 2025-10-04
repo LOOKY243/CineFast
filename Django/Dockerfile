@@ -7,17 +7,16 @@ RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y \
     libpq-dev \
     build-essential
-    # postgresql-client
 
-# RUN mkdir cinefast
-# WORKDIR /cinefast
+RUN mkdir cinefast
+WORKDIR /cinefast
 
-# COPY requirements /cinefast/.
-# RUN pip install --no-cache-dir -r requirements
+COPY requirements.txt /cinefast/.
+RUN pip install --no-cache-dir -r requirements.txt
 
-# COPY workspace/ .
-# COPY script.sh .
+COPY workspace/ .
+COPY script.sh .
 
-# RUN chmod +x script.sh
+RUN chmod +x script.sh
 
-# CMD ["bash", "/cinefast/script.sh"]
+CMD ["bash", "/cinefast/script.sh"]

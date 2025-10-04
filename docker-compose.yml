@@ -2,7 +2,7 @@ services:
   django:
     container_name: django
     build:
-      context: Django/workspace/.
+      context: ./Django/
       dockerfile: Dockerfile
     # env_file:
     #   - .env
@@ -12,17 +12,29 @@ services:
     volumes:
       - django:/CineFast
     networks:
-      - Transcendence
-    depends_on:
-      - postgres
+      - Cinefast
   nginx:
     container_name: nginx
     build:
-      dockerfile: Nginx/Dockerfile
-    # env_file:
-    #   - .env
+      context: ./Nginx
+      dockerfile: Dockerfile
     ports:
       - "8443:8443"
     restart: unless-stopped
     networks:
-      - Transcendence
+      - Cinefast
+    depends_on:
+      - django
+
+
+volumes:
+  django:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: data/django
+
+networks:
+  Cinefast:
+    driver: bridge

@@ -1,1 +1,4 @@
+Django
+djangorestframework
 faker
+requests==2.31.0
