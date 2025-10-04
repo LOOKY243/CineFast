@@ -1,0 +1,28 @@
+services:
+  django:
+    container_name: django
+    build:
+      context: Django/workspace/.
+      dockerfile: Dockerfile
+    # env_file:
+    #   - .env
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      - django:/CineFast
+    networks:
+      - Transcendence
+    depends_on:
+      - postgres
+  nginx:
+    container_name: nginx
+    build:
+      dockerfile: Nginx/Dockerfile
+    # env_file:
+    #   - .env
+    ports:
+      - "8443:8443"
+    restart: unless-stopped
+    networks:
+      - Transcendence

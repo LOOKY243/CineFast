@@ -1,0 +1,118 @@
+/* Reset */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+/* Top bar */
+.topbar {
+    display: flex;
+    justify-content: center; /* center content as base */
+    align-items: center;
+    width: 100%;
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #111, #222);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* stays above sidebar */
+}
+
+/* Logo */
+.logo {
+    position: absolute;   /* free from flex alignment */
+    top: 15px;
+    left: 20px;
+    z-index: 1100; /* above sidebar */
+}
+.logo a {
+    text-decoration: none;
+    color: yellow;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/* Search bar */
+.search-container {
+    flex: 1;
+    text-align: center;
+}
+.search-container input {
+    background-color: #222;
+    border-color: white;
+    color: white;
+    width: 50%;
+    padding: 10px 40px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    transition: 0.3s ease;
+}
+.search-container input:focus {
+    box-shadow: 0 0 8px yellow;
+}
+
+/* Top buttons */
+.top-buttons {
+    position: absolute;
+    right: 85px;
+}
+.top-buttons button {
+    background: yellow;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.top-buttons button:hover {
+    background: yellow;
+    transform: scale(1.05);
+}
+.top-buttons .login {
+    color: #000;
+    background: yellow;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: #0e0d0d;
+    padding-top: 80px; /* below logo */
+    z-index: 500;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar button {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.sidebar button:hover {
+    background: #222;
+}
+
+/* Main content */
+.content {
+    margin-left: 200px; /* sidebar offset */
+    margin-top: 80px;   /* topbar offset */
+    padding: 20px;
+}

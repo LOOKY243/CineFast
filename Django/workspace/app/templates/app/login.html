@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, intitial-scale=1.0" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+        <title>CineFast</title>
+    </head>
+
+    <body>
+        <header class="topbar">
+            <div class="logo">
+                <a href="{% url 'home' %}">CineFast</a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Rechercher un film, série, animé...">
+            </div>
+            <div class="top-buttons">
+                <button>Abonnement</button>
+            </div>
+        </header>
+
+        <div id="forms">
+            <!--Register Container-->
+            <div class="register">
+                <ul>
+                    <li><div class="option">Creer un compte</div></li>
+                    <li><p>Vous n'avez pas encore de compte?</p></li>
+                    <li><input type="text" placeholder="Votre pseudo"></li>
+                    <li><button>Register</button></li>
+                </ul>
+            </div>
+            <!--Login container-->
+            <div class="login">
+                <ul>
+                    <li><div class="option">Se connecter</div></li>
+                    <li><input type="text" placeholder="Votre pseudo"></li>
+                    <li><input type="text" placeholder="liste de mots secrets"></li>
+                    <li><button>Login</button></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
