@@ -5,7 +5,7 @@ all: build up
 
 cert:
 	@mkdir -p Nginx/cert
-	@openssl req -x509 -newkey rsa:2048 -keyout Nginx/cert/server.key -out Nginx/cert/server.crt -days 365 -nodes -subj "/C=FR/ST=FRANCE/L=ANGOULEME/CN=KBUTOR-B"
+	@openssl req -x509 -newkey rsa:2048 -keyout Nginx/cert/server.key -out Nginx/cert/server.crt -days 365 -nodes -subj "/C=FR/ST=FRANCE/L=ANGOULEME/CN=GMARRE"
 
 volume:
 	# @mkdir -p data/postgres
